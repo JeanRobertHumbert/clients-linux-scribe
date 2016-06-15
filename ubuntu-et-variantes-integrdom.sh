@@ -421,6 +421,12 @@ apt-get -y purge indicator-messages
 # Lecture DVD
 apt-get -y install libdvdread4
 bash /usr/share/doc/libdvdread4/install-css.sh
+########################################################################
+# Définition de la page d'acceuil de firefox
+########################################################################
+echo "
+user_pref(\"browser.startup.homepage\", \"$pagedemarragepardefaut\");
+" >> /usr/lib/firefox/defaults/pref/channel-prefs.js
 
 # Résolution problème GTK dans certains cas uniquement pour Trusty (exemple pour lancer gedit directement avec : sudo gedit)
 if [ "$DISTRIB_RELEASE" = "14.04" ] ; then
